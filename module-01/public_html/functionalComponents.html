@@ -15,7 +15,8 @@ and open the template in the editor.
     </head>
     <body>
         <div id="root">
-            
+            <div id="hello-world"></div>
+            <div id="nested-elements"></div>
         </div>
         <script type="text/babel">
             /*
@@ -28,7 +29,34 @@ and open the template in the editor.
             
             ReactDOM.render(
                 <HelloWorld message="Passed message"/>,
-                document.getElementById("root")
+                document.getElementById("hello-world")
+            )
+    
+            /*Zagnieżdżone Functional Components*/
+            function ListElement(props) {
+                return <li>{props.element}</li>
+            }
+            
+            function ListTitle(props) {
+                return <h3>{props.title}</h3>
+            }
+            
+            function List(props) {
+                return (
+                    <div>
+                        <ListTitle title={props.title} />
+                        <ul>
+                            <ListElement element={props.elements[0]}/>
+                            <ListElement element={props.elements[1]}/>
+                        </ul>
+                    </div>
+                    
+                );
+            }
+            
+            ReactDOM.render(
+                <List title="Lista" elements={[1,2]} />,
+                document.getElementById("nested-elements")
             )
         </script>
     </body>
