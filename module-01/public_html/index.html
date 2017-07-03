@@ -12,6 +12,7 @@
         <div id="root">
             <div id="hello-world"></div>
             <div id="counter"></div>
+            <div id="object"></div>
         </div>
         <script type="text/babel">
             /*Hello world*/
@@ -38,6 +39,16 @@
                 }
             }
             
+            var point = {
+                x: 10,
+                y: 20
+            }
+            
+            
+            ReactDOM.render(
+                <div>point x={point.x}, y={point.y}</div>,
+                document.getElementById("object")
+            )
         </script>
     </body>
 </html>
