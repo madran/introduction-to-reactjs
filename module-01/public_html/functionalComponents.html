@@ -41,6 +41,10 @@ and open the template in the editor.
                 return <h3>{props.title}</h3>
             }
             
+            function ListFooter(props) {
+                return props.showFooter && <div>Footer</div>
+            }
+            
             function List(props) {
                 return (
                     <div>
@@ -49,13 +53,13 @@ and open the template in the editor.
                             <ListElement element={props.elements[0]}/>
                             <ListElement element={props.elements[1]}/>
                         </ul>
+                        <ListFooter showFooter={props.showFooter}/>
                     </div>
-                    
                 );
             }
             
             ReactDOM.render(
-                <List title="Lista" elements={[1,2]} />,
+                <List title="Lista" elements={[1,2]} showFooter={false} />,
                 document.getElementById("nested-elements")
             )
         </script>
