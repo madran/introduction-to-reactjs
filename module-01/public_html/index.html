@@ -13,6 +13,7 @@
             <div id="hello-world"></div>
             <div id="counter"></div>
             <div id="object"></div>
+            <div id="nested-elements"></div>
         </div>
         <script type="text/babel">
             /*Hello world*/
@@ -52,6 +53,23 @@
             ReactDOM.render(
                 <div style={{fontSize: '20px'}}>point x={point.x}, y={point.y}</div>,
                 document.getElementById("object")
+            )
+    
+            /*nested elements*/
+            /*
+             * Jeżeli mamy zagnieżdżone elementy to na szczycie herarhii może być
+             * tylko jeden element.
+             */
+            var element = (
+                <div>
+                    <div>Hello Wrold</div>
+                    <div>Hello World</div>
+                </div>
+            )
+    
+            ReactDOM.render(
+                element,
+                document.getElementById("nested-elements")
             )
         </script>
     </body>
