@@ -26,11 +26,15 @@
     
             /*Counter*/
             var num = 0;
-            var interval = setInterval(counter, 200)
+            var interval = setInterval(counter, 200);
+            var counterStyle = {
+                backgroundColor: 'black',
+                color: 'white'
+            }
             
             function counter() {
                 ReactDOM.render(
-                    <div>{num++}</div>,
+                    <div style={counterStyle}>{num++}</div>,
                     document.getElementById("counter")
                 );
         
