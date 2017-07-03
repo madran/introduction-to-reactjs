@@ -9,12 +9,30 @@
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.24.0/babel.js"></script>
     </head>
     <body>
-        <div id="root"></div>
+        <div id="root">
+            <div id="hello-world"></div>
+            <div id="counter"></div>
+        </div>
         <script type="text/babel">
             ReactDOM.render(
                 <div>Hello World</div>,
-                document.getElementById("root")
-            )
+                document.getElementById("hello-world")
+            );
+    
+            var num = 0;
+            
+            var interval = setInterval(counter, 200)
+            
+            function counter() {
+                ReactDOM.render(
+                    <div>{num++}</div>,
+                    document.getElementById("counter")
+                );
+        
+                if(num > 10) {
+                    clearInterval(interval);
+                }
+            }
         </script>
     </body>
 </html>
