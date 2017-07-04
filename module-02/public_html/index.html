@@ -29,6 +29,9 @@ and open the template in the editor.
                 constructor(props) {
                     super(props);
                     this.state = {isOn: false};
+                    this.setOn = this.setOn.bind(this);
+                    this.setOff = this.setOff.bind(this);
+                    this.switch = this.switch.bind(this);
                 }
                 
                 setOn() {
@@ -39,12 +42,25 @@ and open the template in the editor.
                     this.setState({isOn: false});
                 }
                 
+                switch() {
+                    this.setState((prevState, props) => {
+                        return {isOn: !prevState.isOn};
+                    })
+                }
+                
                 componentDidMount() {
                     this.setOn();
                 }
                 
                 render() {
-                    return <div>Machine is {this.state.isOn ? "ON" : "OFF"}</div>
+                    return (
+                        <div>
+                            <div>Machine is {this.state.isOn ? "ON" : "OFF"}</div>
+                            <button onClick={this.setOn}>On</button>
+                            <button onClick={this.setOff}>Off</button><br />
+                            <button onClick={this.switch}>Switch</button>
+                        </div>
+                    )
                 }
             }
             
