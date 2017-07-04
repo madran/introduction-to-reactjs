@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Module-01 Class Components</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="https://unpkg.com/react@15/dist/react.min.js"></script>
+        <script type="text/javascript" src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.24.0/babel.js"></script>
+    </head>
+    <body>
+        <div>
+            <div id="class-component"></div>
+            <div id="on-off"></div>
+        </div>
+        <script type="text/babel">
+            class Welcome extends React.Component {
+                render() {
+                    return <div>Class Component - {this.props.message}</div>;
+                }
+            }
+            
+            class OnOff extends React.Component {
+                constructor(props) {
+                    super(props);
+                    this.state = {isOn: false};
+                }
+                
+                setOn() {
+                    this.setState({isOn: true});
+                }
+                
+                setOff() {
+                    this.setState({isOn: false});
+                }
+                
+                componentDidMount() {
+                    this.setOn();
+                }
+                
+                render() {
+                    return <div>Machine is {this.state.isOn ? "ON" : "OFF"}</div>
+                }
+            }
+            
+            ReactDOM.render(
+                <Welcome message="Passed message"/>,
+                document.getElementById("class-component")
+            )
+    
+            ReactDOM.render(
+                <OnOff />,
+                document.getElementById("on-off")
+            )
+        </script>
+    </body>
+</html>
