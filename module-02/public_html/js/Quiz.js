@@ -7,34 +7,24 @@ class Quiz extends React.Component {
         ];
         this.state.answers = [
             {
-                correctAnser: 2,
-                answers: [
-                    "1", "2", "3", "4"
-                ]
+                correctAnser: [0,1,0,0],
+                answers: ["1", "2", "3", "4"]
             },
             {
-                correctAnser: 1,
-                answers: [
-                    "4", "2", "6", "9"
-                ]
+                correctAnser: [1,0,0,0],
+                answers: ["4", "2", "6", "9"]
             },
             {
-                correctAnser: 1,
-                answers: [
-                    "6", "3", "7", "9"
-                ]
+                correctAnser: [1,0,0,0],
+                answers: ["6", "3", "7", "9"]
             },
             {
-                correctAnser: 3,
-                answers: [
-                    "12", "5", "8", "23"
-                ]
+                correctAnser: [0,0,1,0],
+                answers: ["12", "5", "8", "23"]
             },
             {
-                correctAnser: 4,
-                answers: [
-                    "21", "11", "7", "10"
-                ]
+                correctAnser: [0,0,0,1],
+                answers: ["21", "11", "7", "10"]
             }
         ];
     }
