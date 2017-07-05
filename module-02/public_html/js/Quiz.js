@@ -2,6 +2,7 @@ class Quiz extends React.Component {
     constructor(props) {
         super(props);
         this.state.currentQuestion = 1;
+        this.state.numberOfCorrectAnswers = 0;
         this.state.questions = [
             "1 + 1 =  ?", "2 + 2 =  ?", "3 + 3 =  ?", "4 + 4 =  ?", "5 + 5 =  ?"
         ];
@@ -35,7 +36,7 @@ class Quiz extends React.Component {
                 <Question question="{this.state.questions[this.state.currentQuestion]}"/>
                 <Answers answers="{this.state.answers[this.state.currentQuestion]}"/>
                 <Navigation />
-                <Points />
+                <Points numberOfCorrectAnswers="{this.state.numberOfCorrectAnswers}"/>
             </div>
         )
     }
