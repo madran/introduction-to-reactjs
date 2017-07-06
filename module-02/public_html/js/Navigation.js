@@ -1,5 +1,5 @@
 class Navigation extends React.Component {
     render() {
-        return <button>Next</button>
+        return <button onClick={() => { this.props.nextQuestion() }}>Next</button>
     }
 }

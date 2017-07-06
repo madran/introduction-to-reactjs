@@ -30,15 +30,25 @@ class Quiz extends React.Component {
                 }
             ]
         }
+        
+        this.nextQuestion = this.nextQuestion.bind(this);
+    }
+    
+    nextQuestion() {
+        this.setState((prevState, props) => {
+            if(prevState.currentQuestion < 4) {
+                return { currentQuestion: prevState.currentQuestion + 1 }
+            }
+        });
     }
     
     render() {
         return(
             <div id="quiz">
-                <Question question={this.state.questions[this.state.currentQuestion]}/>
-                <Answers answers={this.state.answers[this.state.currentQuestion]}/>
-                <Navigation />
-                <Points numberOfCorrectAnswers={this.state.numberOfCorrectAnswers}/>
+                <Question question={this.state.questions[this.state.currentQuestion]} />
+                <Answers answers={this.state.answers[this.state.currentQuestion]} />
+                <Navigation nextQuestion={this.nextQuestion} />
+                <Points numberOfCorrectAnswers={this.state.numberOfCorrectAnswers} />
             </div>
         )
     }
