@@ -5,7 +5,7 @@ class Answers extends React.Component {
             answers.push(
                 <div>
                     <label for="answer">{this.props.answers.answers[i]}</label>
-                    <input type="radio" name="answer" value="{i}" /><br />
+                    <input type="radio" name="answer" value={i} /><br />
                 </div>
             );
         }
