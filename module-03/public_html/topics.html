@@ -9,9 +9,15 @@
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.24.0/babel.js"></script>
     </head>
     <body>
-        <div>TODO write content</div>
+        <div id="page"></div>
         <script type="text/babel" src="http://tools-madran.hopto.org/fileServer/react/introduction-to-reactjs/module-03/topics/Topics.js"></script>
         <script type="text/babel" src="http://tools-madran.hopto.org/fileServer/react/introduction-to-reactjs/module-03/topics/NewTopicForm.js"></script>
         <script type="text/babel" src="http://tools-madran.hopto.org/fileServer/react/introduction-to-reactjs/module-03/topics/TopicList.js"></script>
+        <script type="text/babel">
+            ReactDOM.render(
+                <Topics />,
+                document.getElementById('page')
+            );
+        </script>
     </body>
 </html>
