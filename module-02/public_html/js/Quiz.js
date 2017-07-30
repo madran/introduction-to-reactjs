@@ -36,7 +36,7 @@ class Quiz extends React.Component {
     
     nextQuestion() {
         this.setState((prevState, props) => {
-            if(prevState.currentQuestion < 5) {
+            if(prevState.currentQuestion < prevState.questions.length) {
                 return { currentQuestion: prevState.currentQuestion + 1 }
             }
         });
@@ -48,23 +48,29 @@ class Quiz extends React.Component {
                 answerValue = answers[i].value;
             }
         }
-        if(this.state.correctAnwser < 5 && answerValue == this.state.answers[this.state.currentQuestion].correctAnwser - 1) {
+        
+        if(answerValue == this.state.answers[this.state.currentQuestion].correctAnswer - 1) {
             this.setState((prevState, props) => {
                 return { numberOfCorrectAnswers: prevState.numberOfCorrectAnswers + 1 };
-            })
+            });
+        }
+        
+        for(var i = 0; i <  answers.length; i++) {
+            answers[i].checked = false;
         }
     }
     
     render() {
         var answers;
-        if(this.state.currentQuestion < 5) {
-            answers = <Answers answers={this.state.answers[this.state.currentQuestion]} />
+        if(this.state.currentQuestion < this.state.questions.length) {
+            var answers = <Answers answers={this.state.answers[this.state.currentQuestion]} />
+            var navigation = <Navigation nextQuestion={this.nextQuestion} />
         }
         return(
             <div id="quiz">
                 <Question question={this.state.questions[this.state.currentQuestion]} />
                 {answers}
-                <Navigation nextQuestion={this.nextQuestion} />
+                {navigation}
                 <Points numberOfCorrectAnswers={this.state.numberOfCorrectAnswers} />
             </div>
         )
