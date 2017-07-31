@@ -1,6 +1,17 @@
 class TopicList extends React.Component
 {
+    constructor(props) {
+        super(props);
+    }
+    
     render() {
-        return <ol></ol>
+        var topics = this.props.topics.map((item) => {
+            return <li>{item}</li>
+        });
+        return (
+            <ol>
+                {topics}
+            </ol>
+        );
     }
 }
