@@ -10,8 +10,10 @@ class Topics extends React.Component
     }
     
     newTopic(title) {
-        var topics = this.state.topics.concat({title: title, votes: 0});
-        this.setState({topics: topics});
+        if(title !== '') {
+            var topics = this.state.topics.concat({title: title, votes: 0});
+            this.setState({topics: topics});
+        }
     }
     
     deleteTopic(index) {
