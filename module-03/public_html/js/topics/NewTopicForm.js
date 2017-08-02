@@ -11,7 +11,8 @@ class NewTopicForm extends React.Component
         this.setState({topic: event.target.value});
     }
     
-    submit() {
+    submit(event) {
+        event.preventDefault();
         this.props.newTopicAction(this.state.topic);
     }
     
