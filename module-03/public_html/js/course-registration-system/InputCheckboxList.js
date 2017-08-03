@@ -8,7 +8,7 @@ function InputCheckboxList(props) {
     var list = props.list.map((item) => {
         return (
             <li>
-                <input type="checkbox" name={item.name} value={item.value} />
+                <input type="checkbox" name={item.name} value={item.value} onChange={props.action}/>
                 <label for={item.name}>{item.label}</label>
             </li>
         );

@@ -16,7 +16,7 @@ function InputText(props) {
     return (
         <div stle={div}>
             <label style={label} for={props.name}>{props.label}:</label>
-            <input style={input} type="text" name={props.name} />
+            <input style={input} type="text" name={props.name} onChange={props.action} />
         </div>
     );
 }
