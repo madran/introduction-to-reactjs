@@ -1,22 +1,22 @@
 function InputSelect(props) {
     
     var options = props.options.map((option, index) => {
-        return <option value={option.val}>{option.desc}</option>
+        return <option value={option.value}>{option.name}</option>
     });
     
-    var label = {
+    var labelCSS = {
         display: 'block',
         clear: 'both'
     }
     
-    var select = {
+    var selectCSS = {
         display: 'block'
     }
     
     return (
         <div>
-            <label style={label} for={props.name}>{props.label}:</label>
-            <select style={select} name={props.name}>
+            <label style={labelCSS} for={props.name}>{props.label}:</label>
+            <select style={selectCSS} name={props.name}>
                 {options}
             </select>
         </div>
