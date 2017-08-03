@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="https://unpkg.com/react@15/dist/react.min.js"></script>
+        <script type="text/javascript" src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.24.0/babel.js"></script>
+    </head>
+    <body>
+        <div id="root"></div>
+        <script type="text/babel" src="http://tools-madran.hopto.org/fileServer/react/introduction-to-reactjs/module-03/course-registration-system/CourseRegistrationSystem.js"></script>
+        <script type="text/babel" src="http://tools-madran.hopto.org/fileServer/react/introduction-to-reactjs/module-03/course-registration-system/InputText.js"></script>
+        <script type="text/babel" src="http://tools-madran.hopto.org/fileServer/react/introduction-to-reactjs/module-03/course-registration-system/InputSelect.js"></script>
+        <script type="text/babel" src="http://tools-madran.hopto.org/fileServer/react/introduction-to-reactjs/module-03/course-registration-system/InputCheckboxList.js"></script>
+        <script type="text/babel">
+            var list = [{name: 'a', value: 'a', label: 'a'}, {name: 'b', value: 'b', label: 'b'}];
+            ReactDOM.render(
+                <InputCheckboxList list={list}/>,
+                document.getElementById('root')
+            );
+        </script>
+    </body>
+</html>
