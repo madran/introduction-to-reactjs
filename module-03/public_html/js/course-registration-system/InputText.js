@@ -5,7 +5,8 @@ function InputText(props) {
     }
     
     var input = {
-        display: 'block'
+        display: 'block',
+        width: '100%'
     }
     
     var div = {

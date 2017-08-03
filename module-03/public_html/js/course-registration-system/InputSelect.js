@@ -10,7 +10,8 @@ function InputSelect(props) {
     }
     
     var selectCSS = {
-        display: 'block'
+        display: 'block',
+        width: '100%'
     }
     
     return (
