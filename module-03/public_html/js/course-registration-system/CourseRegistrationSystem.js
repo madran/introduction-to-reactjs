@@ -7,6 +7,7 @@ class CourseRegistrationSystem extends React.Component
         };
         
         this.register = this.register.bind(this);
+        this.removeRegistration = this.removeRegistration.bind(this);
     }
     
     register(registration) {
@@ -14,11 +15,17 @@ class CourseRegistrationSystem extends React.Component
         this.setState({registrations: registrations});
     }
     
+    removeRegistration(index) {
+        var registrations = this.state.registrations.slice();
+        registrations.splice(index, 1);
+        this.setState({registrations: registrations});
+    }
+    
     render() {
         return (
             <div>
                 <RegistrationForm register={this.register}/>
-                <RegisteredStudentsTable registrations={this.state.registrations} />
+                <RegisteredStudentsTable registrations={this.state.registrations} removeRegistration={this.removeRegistration} />
             </div>
         );
     }

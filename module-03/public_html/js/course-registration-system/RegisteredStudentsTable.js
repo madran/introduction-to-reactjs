@@ -8,8 +8,8 @@ class RegisteredStudentsTable extends React.Component
         var columnHeaders = [
             "Remove", "FirstName", "LastName", "Activity", "Restrictions"
         ];
-        var rows = this.props.registrations.map((registration) => {
-            return <TableRow data={registration} />;
+        var rows = this.props.registrations.map((registration, index) => {
+            return <TableRow data={registration} index={index} removeRegistration={this.props.removeRegistration} />;
         });
         
         return (

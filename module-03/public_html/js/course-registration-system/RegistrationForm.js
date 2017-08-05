@@ -30,10 +30,11 @@ class RegistrationForm extends React.Component
     
     setRestrictions(event) {
         if(event.target.checked) {
-            var restrictions = this.state.restrictions.concat(event.target.value);
+            var restrictions = this.state.restrictions.slice();
+            var restrictions = restrictions.concat(event.target.value);
             this.setState({restrictions: restrictions});
         } else {
-            var restrictions = this.state.restrictions;
+            var restrictions = this.state.restrictions.slice();
             var index = restrictions.indexOf(event.target.value);
             restrictions.splice(index, 1);
             this.setState({restrictions: restrictions});
