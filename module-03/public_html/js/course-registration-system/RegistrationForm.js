@@ -42,7 +42,7 @@ class RegistrationForm extends React.Component
     
     submit(event) {
         event.preventDefault();
-        console.log(this.state);
+        this.props.register(this.state);
     }
     
     componentDidMount() {
